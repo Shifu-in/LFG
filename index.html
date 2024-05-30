@@ -20,15 +20,25 @@
             font-family: 'KenVector Future', sans-serif;
             background-color: #111;
             color: white;
-            display: grid;
-            place-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
 
-        .back-button img {
-            width: 50px;
-            cursor: pointer;
+        .hidden {
+            display: none;
+        }
+
+        .loading-screen, .content {
+            text-align: center;
+        }
+
+        .loading-screen img {
+            width: 150px;
+            height: 150px;
         }
 
         .balance-container, .content {
@@ -68,7 +78,10 @@
     </style>
 </head>
 <body>
-    <div class="content">
+    <div class="loading-screen">
+        <img src="assets/images/loading7.gif" alt="Loading">
+    </div>
+    <div class="content hidden">
         <img src="assets/images/logo.png" alt="Logo" class="logo">
         <div class="balance-container">
             <div class="name">Balance: <span id="balance">0.00000000</span> YOUNG</div>
@@ -78,5 +91,39 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.querySelector('.loading-screen').classList.add('hidden');
+                document.querySelector('.content').classList.remove('hidden');
+            }, 4000);
+
+            var balanceElement = document.getElementById("balance");
+            var countElement = document.getElementById("count");
+
+            var balance = 0;
+            var miningRates = {
+                hour: 2 / 3600,  // 2 YNG per hour
+                day: 30 / 86400, // 30 YNG per day
+                week: 280 / 604800 // 280 YNG per week
+            };
+
+            var totalMiningRate = miningRates.hour + miningRates.day + miningRates.week;
+
+            function updateBalance() {
+                balance += totalMiningRate * 0.5; // Update every 0.5 seconds
+                balanceElement.textContent = balance.toFixed(8);
+                countElement.textContent = balance.toFixed(10);
+            }
+
+            document.getElementById("startButton").addEventListener("click", function() {
+                setInterval(updateBalance, 500);
+            });
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>
