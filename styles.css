@@ -40,6 +40,7 @@ body {
 .name {
     margin: 10px 0;
     font-family: 'Lacquer', sans-serif;
+    font-size: 1.5em; /* Увеличен в полтора раза */
 }
 
 .tv {
