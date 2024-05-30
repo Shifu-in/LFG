@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        document.querySelector('.loading-screen').classList.add('hidden');
+        document.querySelector('.content').classList.remove('hidden');
+    }, 4000);
+
     var balanceElement = document.getElementById("balance");
     var countElement = document.getElementById("count");
 
