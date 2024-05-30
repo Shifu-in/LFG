@@ -14,7 +14,7 @@ app.use(express.static('public'));
 // Helper function to read user data from file
 const readUserData = () => {
     if (fs.existsSync(dataFile)) {
-                const rawData = fs.readFileSync(dataFile);
+        const rawData = fs.readFileSync(dataFile);
         return JSON.parse(rawData);
     }
     return {};
@@ -78,4 +78,3 @@ app.get('/get_user_data/:userId', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
-
