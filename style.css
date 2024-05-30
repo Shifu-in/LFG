@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Lacquer';
+    src: url('assets/fonts/Lacquer-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'KenVectorFuture';
+    src: url('assets/fonts/kenvector_future.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Lacquer', sans-serif;
+    background-color: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.loading-screen, .content {
+    text-align: center;
+}
+
+.loading-screen img {
+    width: 150px;
+    height: 150px;
+}
+
+.balance-container, .content {
+    text-align: center;
+}
+
+.name {
+    margin: 10px 0;
+    font-family: 'Lacquer', sans-serif;
+    font-size: 1.5em;
+}
+
+.tv {
+    text-shadow: 0px 0px 100px #000;
+    padding: 5em;
+    background-color: black;
+    border-radius: 6px;
+    box-shadow: 0 0 0.5px 1px white;
+    color: white;
+    width: 300px;
+    margin: 20px auto;
+    font-family: 'KenVectorFuture', sans-serif;
+}
+
+.start-button, .earn-button {
+    padding: 20px 40px;
+    font-size: 32px;
+    font-family: 'Lacquer', sans-serif;
+    color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 400px;
+}
+
+.numeric {
+    font-family: 'KenVectorFuture', sans-serif;
+}
