@@ -3,78 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        html {
-            height: 100%;
-            display: grid;
-            place-items: center;
+        @font-face {
+            font-family: 'KenVector Future';
+            src: url('../assets/fonts/kenvector_future.ttf') format('truetype');
         }
+
+        @font-face {
+            font-family: 'KenVector Future Thin';
+            src: url('../assets/fonts/kenvector_future_thin.ttf') format('truetype');
+        }
+
         body {
-            font-family: 'Inconsolata', sans-serif;
-            background-color: #111;
-            overflow: hidden;
-            margin: 0;
-        }
-        .name {
-            color: white;
-        }
-        .tv {
-            text-shadow: 0px 0px 100px #000;
-            display: grid;
-            place-items: center;
-            padding: 5em;
-            background-color: black;
-            border-radius: 6px;
-            box-shadow: 0 0 0.5px 1px white;
-            color: white;
-            width: 200px;
-            height: 100px;
-        }
-        .button-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .earn-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            font-family: 'Inconsolata', sans-serif;
-            color: #111;
-            background-color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            font-family: 'KenVector Future', sans-serif;
         }
     </style>
-    <title>Balance App</title>
 </head>
 <body>
-    <div class="name">Balance: <span id="balance">10.14691900</span> btc</div>
-    <div class="tv" id="count">Game starts in 72 hours</div>
-    <div class="name">Day ---------------------------- 0.0003277300</div>
-    <div class="name">Week ---------------------------- 0.0022940900</div>
-    <div class="name">Month ---------------------------- 0.0101595600</div>
-    <div class="button-container">
-        <button class="earn-button" onclick="startEarning()">Earn</button>
+    <div class="back-button">
+        <img src="../assets/images/arrowSilver_left.png" alt="Back" onclick="goBack()">
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
+    <div class="content">
+        <div class="balance-container">
+            <div class="name">Balance: <span id="balance">0.00000000</span> btc</div>
+        </div>
+        <div class="tv" id="count">Boosts will be available soon...</div>
+        <div class="name">Days until game launch: <span id="daysUntilLaunch">7</span></div>
+        <button id="startButton" class="start-button">Запустить</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
+    <script src="script.js"></script>
     <script>
-        let balanceElement = document.getElementById('balance');
-        let balance = parseFloat(balanceElement.textContent);
-        
-        function startEarning() {
-            let targetBalance = balance + 0.00022793;
-            let countUp = new CountUp('balance', balance, targetBalance, 8, 2);
-            if (!countUp.error) {
-                countUp.start(() => {
-                    balance = targetBalance;
-                    balanceElement.textContent = balance.toFixed(8);
-                });
-            } else {
-                console.error(countUp.error);
-            }
+        function goBack() {
+            window.history.back();
         }
     </script>
 </body>
