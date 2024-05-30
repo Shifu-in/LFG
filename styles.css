@@ -52,7 +52,7 @@ body {
     margin: 20px auto;
 }
 
-.start-button, .earn-button, .partner-button, .subscribe-button {
+.start-button, .earn-button {
     padding: 20px 40px;
     font-size: 32px;
     font-family: 'KenVector Future', sans-serif;
@@ -68,30 +68,4 @@ body {
     width: 200px;
     height: 200px;
     margin-bottom: 400px;
-}
-
-.partner-content {
-    display: none;
-    text-align: center;
-}
-
-.back-button {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.channel {
-    margin: 20px 0;
-}
-
-.reward-info {
-    margin-top: 40px;
-}
-
-.balance {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
 }
