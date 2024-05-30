@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'KenVector Future';
-    src: url('../assets/fonts/kenvector_future.ttf') format('truetype');
+    src: url('assets/fonts/kenvector_future.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'KenVector Future Thin';
-    src: url('../assets/fonts/kenvector_future_thin.ttf') format('truetype');
+    src: url('assets/fonts/kenvector_future_thin.ttf') format('truetype');
 }
 
 body {
@@ -67,5 +67,24 @@ body {
 .logo {
     width: 200px;
     height: 200px;
-    margin-bottom: 400px; /* Сдвинуто вверх на 400 пикселей */
+    margin-bottom: 400px;
+}
+
+.partner-content {
+    display: none;
+    text-align: center;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.channel {
+    margin: 20px 0;
+}
+
+.reward-info {
+    margin-top: 40px;
 }
