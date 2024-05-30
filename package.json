@@ -5,7 +5,7 @@
   "main": "api/index.js",
   "scripts": {
     "start": "node api/index.js",
-    "build": "echo 'Building the project...' && mkdir -p public && cp -r assets public/assets && cp -r api public/api && cp index.html public/index.html && cp style.css public/style.css && cp script.js public/script.js"
+    "vercel-build": "echo 'Skipping build step' && mkdir -p public && cp -r assets public/assets && cp -r api public/api && cp index.html public/index.html && cp style.css public/style.css && cp script.js public/script.js"
   },
   "dependencies": {
     "express": "^4.17.1"
