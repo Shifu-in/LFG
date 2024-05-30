@@ -12,15 +12,25 @@ body {
     font-family: 'KenVector Future', sans-serif;
     background-color: #111;
     color: white;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
-.back-button img {
-    width: 50px;
-    cursor: pointer;
+.hidden {
+    display: none;
+}
+
+.loading-screen, .content {
+    text-align: center;
+}
+
+.loading-screen img {
+    width: 150px;
+    height: 150px;
 }
 
 .balance-container, .content {
