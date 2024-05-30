@@ -8,12 +8,12 @@
     <style>
         @font-face {
             font-family: 'KenVector Future';
-            src: url('../assets/fonts/kenvector_future.ttf') format('truetype');
+            src: url('assets/fonts/kenvector_future.ttf') format('truetype');
         }
 
         @font-face {
             font-family: 'KenVector Future Thin';
-            src: url('../assets/fonts/kenvector_future_thin.ttf') format('truetype');
+            src: url('assets/fonts/kenvector_future_thin.ttf') format('truetype');
         }
 
         body {
@@ -75,7 +75,38 @@
         .logo {
             width: 200px;
             height: 200px;
-            margin-bottom: 400px; /* Сдвинуто вверх на 400 пикселей */
+            margin-bottom: 400px;
+        }
+
+        .partner-content {
+            display: none;
+            text-align: center;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .channel {
+            margin: 20px 0;
+        }
+
+        .reward-info {
+            margin-top: 40px;
+        }
+
+        .subscribe-button {
+            padding: 20px 40px;
+            font-size: 32px;
+            font-family: 'KenVector Future', sans-serif;
+            color: #111;
+            background-color: blue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -83,7 +114,7 @@
     <div class="loading-screen">
         <img src="assets/images/loading7.gif" alt="Loading">
     </div>
-    <div class="content hidden">
+    <div class="content hidden" id="mainContent">
         <img src="assets/images/logo.png" alt="Logo" class="logo">
         <div class="balance-container">
             <div class="name">Balance: <span id="balance">0.00000000</span> YOUNG</div>
@@ -92,45 +123,25 @@
         <button id="startButton" class="start-button earn-button">Earn</button>
         <button id="partnerButton" class="start-button partner-button">Partner</button>
     </div>
+    <div class="partner-content hidden" id="partnerContent">
+        <div class="back-button">
+            <img src="assets/images/arrowSilver_left.png" alt="Back" onclick="goBack()">
+        </div>
+        <h1>Partner with Us</h1>
+        <div class="name">Subscribe to these channels and earn 5000 YOUNG:</div>
+        <div class="channel">
+            <div class="name">Channel 1</div>
+            <button class="subscribe-button" onclick="subscribe(1)">Subscribe</button>
+        </div>
+        <div class="channel">
+            <div class="name">Channel 2</div>
+            <button class="subscribe-button" onclick="subscribe(2)">Subscribe</button>
+        </div>
+        <div class="reward-info">
+            <div class="name">Total Earned: <span id="totalEarned">0</span> YOUNG</div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                document.querySelector('.loading-screen').classList.add('hidden');
-                document.querySelector('.content').classList.remove('hidden');
-            }, 4000);
-
-            var balanceElement = document.getElementById("balance");
-            var countElement = document.getElementById("count");
-
-            var balance = 0;
-            var miningRates = {
-                hour: 2 / 3600,  // 2 YNG per hour
-                day: 30 / 86400, // 30 YNG per day
-                week: 280 / 604800 // 280 YNG per week
-            };
-
-            var totalMiningRate = miningRates.hour + miningRates.day + miningRates.week;
-
-            function updateBalance() {
-                balance += totalMiningRate * 0.5; // Update every 0.5 seconds
-                balanceElement.textContent = balance.toFixed(8);
-                countElement.textContent = balance.toFixed(10);
-            }
-
-            document.getElementById("startButton").addEventListener("click", function() {
-                setInterval(updateBalance, 500);
-            });
-
-            document.getElementById("partnerButton").addEventListener("click", function() {
-                window.location.href = 'partner.html';
-            });
-        });
-
-        function goBack() {
-            window.history.back();
-        }
-    </script>
 </body>
 </html>
