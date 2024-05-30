@@ -1,25 +1,3 @@
-@font-face {
-    font-family: 'Lacquer';
-    src: url('assets/fonts/Lacquer-Regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'KenVectorFuture';
-    src: url('assets/fonts/kenvector_future.ttf') format('truetype');
-}
-
-body {
-    font-family: 'Lacquer', sans-serif;
-    background-color: #111;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-}
-
 .hidden {
     display: none;
 }
