@@ -60,7 +60,7 @@
             margin: 20px auto;
         }
 
-        .start-button, .earn-button, .partner-button, .subscribe-button {
+        .start-button, .earn-button {
             padding: 20px 40px;
             font-size: 32px;
             font-family: 'KenVector Future', sans-serif;
@@ -77,32 +77,6 @@
             height: 200px;
             margin-bottom: 400px;
         }
-
-        .partner-content {
-            display: none;
-            text-align: center;
-        }
-
-        .back-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .channel {
-            margin: 20px 0;
-        }
-
-        .reward-info {
-            margin-top: 40px;
-        }
-
-        .balance {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-        }
     </style>
 </head>
 <body>
@@ -116,26 +90,6 @@
         </div>
         <div class="tv" id="count">Game starts in 72 hours</div>
         <button id="startButton" class="start-button earn-button">Earn</button>
-        <button id="partnerButton" class="start-button partner-button">Partner</button>
-    </div>
-    <div class="partner-content hidden" id="partnerContent">
-        <div class="back-button">
-            <img src="assets/images/arrowSilver_left.png" alt="Back" onclick="goBack()">
-        </div>
-        <div class="balance">Balance: <span id="partnerBalance">0.00000000</span> YOUNG</div>
-        <h1>Partner with Us</h1>
-        <div class="name">Subscribe to these channels and earn 5000 YOUNG:</div>
-        <div class="channel">
-            <div class="name">Channel 1: <a href="https://t.me/tailungairdrop" target="_blank">https://t.me/tailungairdrop</a></div>
-            <button class="subscribe-button" onclick="subscribe(1, 'https://t.me/tailungairdrop')">Subscribe</button>
-        </div>
-        <div class="channel">
-            <div class="name">Channel 2: <a href="https://t.me/shifucrypto" target="_blank">https://t.me/shifucrypto</a></div>
-            <button class="subscribe-button" onclick="subscribe(2, 'https://t.me/shifucrypto')">Subscribe</button>
-        </div>
-        <div class="reward-info">
-            <div class="name">Total Earned: <span id="totalEarned">0</span> YOUNG</div>
-        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
     <script src="script.js"></script>
