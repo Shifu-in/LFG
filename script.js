@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.status === 'success') {
                 balance = data.data.balance;
                 updateBalanceDisplay();
+            } else {
+                console.error('Error fetching user data:', data);
             }
         })
         .catch(error => console.error('Error fetching user data:', error));
@@ -38,7 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
             })
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if (data.status !== 'success') {
+                console.error('Error saving user data:', data);
+            }
+        })
         .catch(error => console.error('Error:', error));
     }
 
