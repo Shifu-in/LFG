@@ -4,7 +4,7 @@
 }
 
 @font-face {
-    font-family: 'NumericFont';
+    font-family: 'KenVectorFuture';
     src: url('assets/fonts/kenvector_future.ttf') format('truetype');
 }
 
@@ -51,13 +51,14 @@ body {
     color: white;
     width: 300px;
     margin: 20px auto;
+    font-family: 'KenVectorFuture', sans-serif;
 }
 
 .start-button, .earn-button {
     padding: 20px 40px;
     font-size: 32px;
     font-family: 'Lacquer', sans-serif;
-    color: #111;
+    color: white; /* Изменено на белый цвет */
     background-color: blue;
     border: none;
     border-radius: 5px;
@@ -72,5 +73,5 @@ body {
 }
 
 .numeric {
-    font-family: 'NumericFont', sans-serif;
+    font-family: 'KenVectorFuture', sans-serif;
 }
