@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 const app = express();
 const port = 3000;
 
-const botToken = '7413690554:AAHtjqSJH7w3RIv0thp5waF-fXb1TA-rAds';
+const botToken = '7403662953:AAGrLcwLbP9FPIdcTKFvIpfNVCKQblkOFJ0';
 const dataFile = 'server/user_data.json';
 
 app.use(bodyParser.json());
