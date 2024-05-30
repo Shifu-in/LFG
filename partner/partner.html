@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="back-button">
+            <img src="../assets/images/arrowSilver_left.png" alt="Back" onclick="goBack()">
+        </div>
+        <h1>Partner with Us</h1>
+        <div class="name">Subscribe to these channels and earn 5000 YOUNG:</div>
+        <div class="channel">
+            <div class="name">Channel 1</div>
+            <button class="subscribe-button" onclick="subscribe(1)">Subscribe</button>
+        </div>
+        <div class="channel">
+            <div class="name">Channel 2</div>
+            <button class="subscribe-button" onclick="subscribe(2)">Subscribe</button>
+        </div>
+        <div class="reward-info">
+            <div class="name">Total Earned: <span id="totalEarned">0</span> YOUNG</div>
+        </div>
+    </div>
+    <script>
+        var totalEarned = 0;
+
+        function subscribe(channelId) {
+            totalEarned += 5000;
+            document.getElementById('totalEarned').textContent = totalEarned;
+            // Update the balance on the main page
+            var balanceElement = window.opener.document.getElementById('balance');
+            var currentBalance = parseFloat(balanceElement.textContent);
+            currentBalance += 5000;
+            balanceElement.textContent = currentBalance.toFixed(8);
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
