@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         document.querySelector('.loading-screen').classList.add('hidden');
-        document.querySelector('.content').classList.remove('hidden');
+        document.querySelector('#mainContent').classList.remove('hidden');
     }, 4000);
 
     var balanceElement = document.getElementById("balance");
@@ -27,10 +27,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById("partnerButton").addEventListener("click", function() {
-        window.location.href = 'partner.html';
+        document.querySelector('#mainContent').classList.add('hidden');
+        document.querySelector('#partnerContent').classList.remove('hidden');
     });
-});
 
-function goBack() {
-    window.history.back();
-}
+    var totalEarned = 0;
+
+    window.subscribe = function(channelId) {
+        totalEarned += 5000;
+        document.getElementById('totalEarned').textContent = totalEarned;
+        // Update the balance on the main page
+        var balanceElement = document.getElementById('balance');
+        var currentBalance = parseFloat(balanceElement.textContent);
+        currentBalance += 5000;
+        balanceElement.textContent = currentBalance.toFixed(8);
+    };
+
+    window.goBack = function() {
+        document.querySelector('#partnerContent').classList.add('hidden');
+        document.querySelector('#mainContent').classList.remove('hidden');
+    };
+});
