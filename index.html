@@ -60,20 +60,22 @@
             margin: 20px auto;
         }
 
-        .start-button, .earn-button {
-            padding: 10px 20px;
-            font-size: 16px;
+        .start-button, .earn-button, .partner-button {
+            padding: 20px 40px;
+            font-size: 32px;
             font-family: 'KenVector Future', sans-serif;
             color: #111;
             background-color: blue;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin-top: 20px;
         }
 
         .logo {
             width: 200px;
             height: 200px;
+            margin-bottom: 600px;
         }
     </style>
 </head>
@@ -87,7 +89,8 @@
             <div class="name">Balance: <span id="balance">0.00000000</span> YOUNG</div>
         </div>
         <div class="tv" id="count">Game starts in 72 hours</div>
-        <button id="startButton" class="start-button">Earn</button>
+        <button id="startButton" class="start-button earn-button">Earn</button>
+        <button id="partnerButton" class="start-button partner-button">Partner</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
     <script src="script.js"></script>
@@ -118,6 +121,10 @@
 
             document.getElementById("startButton").addEventListener("click", function() {
                 setInterval(updateBalance, 500);
+            });
+
+            document.getElementById("partnerButton").addEventListener("click", function() {
+                window.location.href = 'partner.html';
             });
         });
 
