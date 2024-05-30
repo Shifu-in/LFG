@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("startButton").addEventListener("click", function() {
         setInterval(updateBalance, 500);
     });
+
+    document.getElementById("partnerButton").addEventListener("click", function() {
+        window.location.href = 'partner.html';
+    });
 });
 
 function goBack() {
