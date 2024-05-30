@@ -60,60 +60,23 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+        }
     </style>
 </head>
 <body>
-    <div class="back-button">
-        <img src="../assets/images/arrowSilver_left.png" alt="Back" onclick="goBack()">
-    </div>
     <div class="content">
+        <img src="assets/images/logo.png" alt="Logo" class="logo">
         <div class="balance-container">
             <div class="name">Balance: <span id="balance">0.00000000</span> YOUNG</div>
         </div>
         <div class="tv" id="count">Game starts in 72 hours</div>
-        <div class="name">Days until game launch: <span id="daysUntilLaunch">7</span></div>
         <button id="startButton" class="start-button">Earn</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
     <script src="script.js"></script>
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var balanceElement = document.getElementById("balance");
-            var countElement = document.getElementById("count");
-            var daysElement = document.getElementById("daysUntilLaunch");
-
-            var balance = 0;
-            var miningRates = {
-                hour: 2 / 3600,  // 2 YNG per hour
-                day: 30 / 86400, // 30 YNG per day
-                week: 280 / 604800 // 280 YNG per week
-            };
-
-            var totalMiningRate = miningRates.hour + miningRates.day + miningRates.week;
-
-            function updateBalance() {
-                balance += totalMiningRate * 0.5; // Update every 0.5 seconds
-                balanceElement.textContent = balance.toFixed(8);
-                countElement.textContent = balance.toFixed(10);
-            }
-
-            function updateDaysUntilLaunch() {
-                var days = parseInt(daysElement.textContent, 10);
-                if (days > 0) {
-                    days -= 1;
-                    daysElement.textContent = days;
-                }
-            }
-
-            document.getElementById("startButton").addEventListener("click", function() {
-                setInterval(updateBalance, 500);
-                setInterval(updateDaysUntilLaunch, 86400000); // Update every 24 hours (86400000 ms)
-            });
-        });
-    </script>
 </body>
 </html>
